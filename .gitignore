@@ -8,9 +8,9 @@
 # for more about ignoring files.
 
 # Auto-generated elements (production)
-dist
+#dist
 dist-ssr
-/dist
+#/dist
 /build
 /zip
 
