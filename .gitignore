@@ -75,7 +75,7 @@ Thumbs.db
 *.fig
 *.ai
 *.psd
-*.zip
+#*.zip
 *.rar
 *.7z
 
