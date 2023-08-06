@@ -1,0 +1,69 @@
+{
+ "name": "symbol-shape",
+ "private": false,
+ "version": "0.0.1",
+ "description": "symbol shape markup",
+ "main": "index.html",
+ "homepage": "https://github.com/ghazaryan81/symbol-shape#readme",
+ "author": "Hayk Ghazaryan <hike.kazarian@gmail.com> (https://github.com/ghazaryan81/symbol-shape.git)",
+ "keywords": [
+  "css",
+  "html",
+  "markup",
+  "shape",
+  "symbol"
+ ],
+ "repository": {
+  "type": "git",
+  "url": "git+ssh@github.com:ghazaryan81/symbol-shape.git"
+ },
+ "bugs": {
+  "url": "https://github.com/ghazaryan81/symbol-shape/issues/",
+  "email": "hike.kazarian@gmail.com"
+ },
+ "scripts": {
+  "dev": "npx concurrently \"npm run run:dev\"",
+  "run:dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "killport": "npx kill-port --port 5173,4173",
+  "___________________cleaning_______________________": "",
+  "stylelint:fix": "npm run stylelint -- --fix",
+  "stylelint": "npx stylelint 'styles/**/*{.css,.scss,.sass}'",
+  "prettier:fix": "npm run prettier -- --write",
+  "prettier": "npx prettier --config \"./.prettierrc\" --check \"**/*.{js,jsx,ts,tsx,css,scss,sass}\" --ignore-path .prettierignore",
+  "prepare": "husky install"
+ },
+ "devDependencies": {
+  "husky": "^8.0.3",
+  "json-to-scss": "^1.6.2",
+  "lint-staged": "^13.2.3",
+  "prettier": "^3.0.1",
+  "stylelint": "^15.10.2",
+  "stylelint-config-rational-order": "^0.1.2",
+  "stylelint-config-recommended-scss": "^12.0.0",
+  "stylelint-order": "^6.0.3",
+  "stylelint-prettier": "^4.0.2",
+  "stylelint-scss": "^5.0.1",
+  "vite": "^4.4.5"
+ },
+ "husky": {
+  "hooks": {
+   "pre-commit": "lint-staged"
+  }
+ },
+ "lint-staged": {
+  "styles/**/*.{css,scss}": [
+   "npm run stylelint:fix"
+  ],
+  "**/*.{js,jsx,ts,tsx,css,scss}": [
+   "npm run prettier:fix"
+  ]
+ },
+ "dependencies": {
+  "concurrently": "^8.2.0",
+  "killport": "^1.0.2",
+  "nodemon": "^3.0.1",
+  "sass": "^1.64.2"
+ }
+}

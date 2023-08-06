@@ -1,0 +1,30 @@
+/* stylelint-disable order/order */
+
+/* stylelint-disable no-duplicate-selectors */
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "sass:string";
+
+@use "./root-variables" as *;
+
+// --- functions ---
+@function strip-unit($number) {
+ @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+  @return math.div($number, ($number * 0 + 1));
+ }
+ @return $number;
+}
+
+@function px-to-rem($size, $base: $global-font-size) {
+ @return math.div(strip-unit($size), math.div(strip-unit($base) * 16, 100)) * 1rem;
+}
+
+@function px-to-vw-vh($value, $vwh: 1vw, $vw-viewport: $max-width) {
+ $vw-context: strip-unit($vw-viewport) * 0.01 * 1px;
+ @return #{math.div(strip-unit($value), (strip-unit($vw-context))) * $vwh};
+}
+
+@function radial-shift() {
+ @return #{calc(var(--curve--diameter) / 4)};
+}

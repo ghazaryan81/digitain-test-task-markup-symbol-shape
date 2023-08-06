@@ -1,0 +1,12 @@
+/* stylelint-disable order/order */
+
+/* stylelint-disable no-duplicate-selectors */
+@forward "./variables";
+
+@use "sass:map";
+@use "./variables" as *;
+
+$global-font-size: map.get($variables, "global", "font-size");
+$max-width: map.get($variables, "symbol", "diameter");
+$symbol-outline-width: map.get($variables, "symbol", "diameter") *
+ map.get($variables, "symbol", "outline-width-ratio");
