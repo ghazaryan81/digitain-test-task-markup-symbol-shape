@@ -1,5 +1,6 @@
-Markup symbol shape on the scss & html
-run local:
+Markup symbol shape with scss html
+
+setup & run
 
 git clone https://github.com/ghazaryan81/symbol-shape.git && cd symbol-shape && npm i && npm run dev
 
